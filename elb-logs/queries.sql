@@ -1,15 +1,15 @@
 ----------------------------- 200 response codes
 
-SELECT * FROM elb_logs_raw_native WHERE elb_response_code = '200' LIMIT 100;
+SELECT * FROM elb_logs_pq WHERE elb_response_code = '200' LIMIT 100;
 
 ------------------ Filtering on partition
 
 SELECT distinct(elb_response_code),
          count(url)
-FROM elb_logs_raw_native_part
-WHERE year='2015'
-        AND month= '01'
-        AND day='01'
+FROM elb_logs_pq
+WHERE year=2015
+        AND month=1
+        AND day=1
 GROUP BY  elb_response_code
 
 -------------------------------
