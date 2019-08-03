@@ -1,4 +1,4 @@
-CREATE TABLE hive.default.flights_orc (
+CREATE TABLE flights_orc (
     Year INT,
     Quarter INT,
     Month INT,
